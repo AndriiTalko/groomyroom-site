@@ -26,10 +26,10 @@ background:#faf8f5;
 }
 
 .logo{
-width:400px;
+width:140px;
 height:auto;
 display:block;
-margin:0 auto 25px auto;
+margin:0 auto 20px auto;
 }
 
 h1{
@@ -58,19 +58,30 @@ margin-top:30px;
 }
 
 .button{
-display:inline-block;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
 padding:18px 38px;
-background:#111;
+
+background:#2f3a3a;
+
 color:#fff;
 text-decoration:none;
+
 border-radius:40px;
+
 font-size:18px;
 font-weight:600;
+
 border:none;
+
 transition:0.25s;
 }
 
 .button:hover{
+background:#3b4949;
 transform:translateY(-2px);
 }
 
@@ -141,7 +152,7 @@ color:#777;
 @media(max-width:768px){
 
 .logo{
-width:95px;
+width:110px;
 }
 
 h1{
@@ -162,7 +173,7 @@ align-items:center;
 }
 
 .button{
-width:260px;
+width:280px;
 text-align:center;
 }
 
