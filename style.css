@@ -86,6 +86,14 @@ background:#7f9a88;
 transform:translateY(-2px);
 }
 
+
+.tg-icon{
+width:18px;
+height:18px;
+fill:currentColor;
+flex-shrink:0;
+}
+
 /* SECTIONS */
 
 section{
