@@ -33,34 +33,17 @@ margin:0 auto 20px auto;
 }
 
 h1{
-font-size:56px;
+font-size:52px;
 font-weight:700;
 max-width:800px;
 margin:0 auto 25px;
-line-height:1.15;
+line-height:1.2;
 letter-spacing:-0.01em;
 }
 
-/* Виділення назви бренду в заголовку */
+/* Назва бренду — без виділень, без кольору, без лінії */
 h1 .brand{
-color:#708c7a;
-font-weight:700;
-position:relative;
-display:inline-block;
 white-space:nowrap;
-}
-
-/* Тонка хвиляста лінія під назвою */
-h1 .brand::after{
-content:"";
-position:absolute;
-left:0;
-right:0;
-bottom:-6px;
-height:3px;
-background:#708c7a;
-border-radius:2px;
-opacity:0.35;
 }
 
 .hero-text{
@@ -186,11 +169,6 @@ width:110px;
 
 h1{
 font-size:36px;
-}
-
-h1 .brand::after{
-bottom:-4px;
-height:2px;
 }
 
 .hero-text{
