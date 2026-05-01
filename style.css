@@ -135,6 +135,118 @@ section {
 }
 
 
+/* ============ REVIEWS ============ */
+.reviews-rating {
+  text-align: center;
+  margin-top: -25px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.reviews-stars {
+  color: #f5b50a;
+  font-size: 26px;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.reviews-rating-text {
+  font-size: 15px;
+  color: #777;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: 0.25s;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+}
+
+.review-card::before {
+  content: """;
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  color: #708c7a;
+  opacity: 0.18;
+  line-height: 1;
+}
+
+.review-stars {
+  color: #f5b50a;
+  font-size: 18px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.review-text {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+.review-source {
+  font-size: 13px;
+  color: #999;
+}
+
+.reviews-link {
+  display: block;
+  text-align: center;
+  margin-top: 35px;
+  color: #708c7a;
+  font-weight: 600;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.reviews-link:hover {
+  color: #5d7565;
+  text-decoration: underline;
+}
+
+
 /* ============ CONTACTS ============ */
 .contact-grid {
   display: flex;
@@ -261,12 +373,10 @@ section {
   color: #708c7a;
 }
 
-/* Прибираємо стандартну стрілку браузера */
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-/* Своя стрілка-плюс */
 .faq-item summary::after {
   content: "+";
   font-size: 28px;
@@ -350,6 +460,14 @@ footer {
 
   .faq-answer {
     padding: 0 22px 18px;
+    font-size: 15px;
+  }
+
+  .review-card {
+    padding: 28px 24px;
+  }
+
+  .review-text {
     font-size: 15px;
   }
 
