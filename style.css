@@ -166,81 +166,48 @@ section {
   gap: 24px;
   max-width: 1050px;
   margin: 0 auto;
-  align-items: stretch;
+  align-items: start;
 }
 
 .review-card {
   background: #fff;
-  padding: 30px 28px;
+  padding: 28px 28px 30px;
   border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   position: relative;
-  min-height: 260px;
   transition: 0.25s;
 }
 
 .review-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
 }
 
 .review-card::before {
   content: """;
   position: absolute;
-  top: 8px;
-  right: 26px;
-  font-size: 90px;
+  bottom: 16px;
+  right: 22px;
+  font-size: 80px;
   font-family: Georgia, serif;
   color: #708c7a;
-  opacity: 0.1;
+  opacity: 0.08;
   line-height: 1;
   pointer-events: none;
 }
 
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.review-stars {
-  color: #f5b50a;
-  font-size: 18px;
-  letter-spacing: 2px;
-  line-height: 1;
-}
-
-.review-google-badge {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-
-.review-text {
-  color: #444;
-  font-size: 16px;
-  line-height: 1.65;
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-
-.review-author {
+.review-top {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid #eee;
 }
 
 .review-avatar {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -255,6 +222,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  flex: 1;
   min-width: 0;
 }
 
@@ -270,6 +238,40 @@ section {
 .review-meta {
   font-size: 12px;
   color: #999;
+}
+
+.review-google-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f5f7fa;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.review-google-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.review-stars {
+  color: #f5b50a;
+  font-size: 17px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.review-text {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
 }
 
 /* Кнопка дії + посилання внизу */
