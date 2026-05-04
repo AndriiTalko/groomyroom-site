@@ -83,11 +83,12 @@ h1 .brand {
   transform: translateY(-2px);
 }
 
-.tg-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
+/* Універсальна іконка для всіх кнопок */
+.btn-icon {
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
+  display: block;
 }
 
 
