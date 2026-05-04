@@ -76,6 +76,7 @@ h1 .brand {
   font-weight: 600;
   border: none;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -83,7 +84,6 @@ h1 .brand {
   transform: translateY(-2px);
 }
 
-/* Універсальна іконка для всіх кнопок */
 .btn-icon {
   width: 20px;
   height: 20px;
@@ -141,8 +141,6 @@ section {
   text-align: center;
   margin-top: -25px;
   margin-bottom: 40px;
-  font-size: 16px;
-  color: #666;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,6 +157,7 @@ section {
 .reviews-rating-text {
   font-size: 15px;
   color: #777;
+  font-weight: 500;
 }
 
 .reviews-grid {
@@ -167,17 +166,19 @@ section {
   gap: 24px;
   max-width: 1050px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .review-card {
   background: #fff;
-  padding: 32px 28px;
+  padding: 30px 28px;
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   position: relative;
+  min-height: 260px;
   transition: 0.25s;
 }
 
@@ -189,13 +190,22 @@ section {
 .review-card::before {
   content: """;
   position: absolute;
-  top: -10px;
-  left: 24px;
-  font-size: 80px;
+  top: 8px;
+  right: 26px;
+  font-size: 90px;
   font-family: Georgia, serif;
   color: #708c7a;
-  opacity: 0.18;
+  opacity: 0.1;
   line-height: 1;
+  pointer-events: none;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .review-stars {
@@ -205,45 +215,101 @@ section {
   line-height: 1;
 }
 
+.review-google-badge {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 .review-text {
   color: #444;
   font-size: 16px;
   line-height: 1.65;
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .review-author {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 12px;
   padding-top: 14px;
   border-top: 1px solid #eee;
 }
 
-.review-name {
-  font-weight: 600;
-  font-size: 16px;
-  color: #2c2c2c;
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.review-source {
-  font-size: 13px;
+.review-author-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c2c2c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-meta {
+  font-size: 12px;
   color: #999;
 }
 
+/* Кнопка дії + посилання внизу */
+.reviews-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
 .reviews-link {
-  display: block;
-  text-align: center;
-  margin-top: 35px;
   color: #708c7a;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 16px;
   text-decoration: none;
   transition: 0.2s;
 }
 
 .reviews-link:hover {
   color: #5d7565;
+  text-decoration: underline;
+}
+
+.reviews-leave {
+  text-align: center;
+  margin-top: 22px;
+  color: #888;
+  font-size: 15px;
+}
+
+.reviews-leave a {
+  color: #708c7a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.reviews-leave a:hover {
   text-decoration: underline;
 }
 
@@ -465,11 +531,17 @@ footer {
   }
 
   .review-card {
-    padding: 28px 24px;
+    padding: 26px 22px;
+    min-height: auto;
   }
 
   .review-text {
     font-size: 15px;
+  }
+
+  .reviews-actions {
+    flex-direction: column;
+    gap: 18px;
   }
 
 }
