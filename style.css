@@ -838,3 +838,41 @@ footer {
     height: 20px;
   }
 }
+
+
+/* ============ SCROLL ANIMATIONS ============ */
+
+/* Початковий стан — невидимо, нижче на 30px */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Коли елемент в полі зору — плавно з'являється */
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Затримки для послідовної появи */
+[data-animate][data-delay="80"] { transition-delay: 0.08s; }
+[data-animate][data-delay="100"] { transition-delay: 0.1s; }
+[data-animate][data-delay="120"] { transition-delay: 0.12s; }
+[data-animate][data-delay="150"] { transition-delay: 0.15s; }
+[data-animate][data-delay="160"] { transition-delay: 0.16s; }
+[data-animate][data-delay="200"] { transition-delay: 0.2s; }
+[data-animate][data-delay="240"] { transition-delay: 0.24s; }
+[data-animate][data-delay="300"] { transition-delay: 0.3s; }
+[data-animate][data-delay="320"] { transition-delay: 0.32s; }
+[data-animate][data-delay="400"] { transition-delay: 0.4s; }
+
+/* Поважаємо налаштування користувача — якщо хоче без анімацій, виключаємо */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
