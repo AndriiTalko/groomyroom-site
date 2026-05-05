@@ -502,6 +502,45 @@ section {
   height: 100%;
   border: 0;
   display: block;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Placeholder — заглушка поки карта вантажиться */
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #708c7a;
+  background: #f5f1ea;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map-placeholder-icon {
+  width: 36px;
+  height: 36px;
+  animation: map-pulse 1.6s ease-in-out infinite;
+}
+
+.map-placeholder-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #708c7a;
+}
+
+.map-placeholder-subtext {
+  font-size: 13px;
+  color: #999;
+}
+
+@keyframes map-pulse {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
 }
 
 
