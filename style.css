@@ -1040,11 +1040,6 @@ footer {
   opacity: 1;
 }
 
-/* Коли фото завантажилось — приховуємо placeholder shimmer */
-.gallery-item:has(.gallery-img.loaded)::before {
-  display: none;
-}
-
 .gallery-link {
   display: block;
   text-align: center;
