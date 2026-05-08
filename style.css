@@ -1229,9 +1229,15 @@ footer {
   .button-secondary {
     flex: 1 1 30%;
     min-width: 90px;
-    padding: 11px 14px;
+    padding: 11px 18px;
     font-size: 13px;
+    gap: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .button-secondary .btn-icon {
+    width: 16px;
+    height: 16px;
   }
 
   .hero-photo {
