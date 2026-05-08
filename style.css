@@ -101,7 +101,6 @@ body {
   grid-template-columns: 1fr 1.1fr;
   gap: 30px;
   align-items: center;
-  min-height: 580px;
 }
 
 .hero-content {
@@ -187,7 +186,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 520px;
 }
 
 .hero-photo-wrap {
