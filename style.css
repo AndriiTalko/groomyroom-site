@@ -1170,7 +1170,7 @@ footer {
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
     text-align: center;
     min-height: auto;
   }
@@ -1182,15 +1182,17 @@ footer {
 
   .hero-photo {
     order: 1;
-    max-width: 420px;
+    max-width: 360px;
     margin: 0 auto;
     min-height: auto;
   }
 
+  /* Бейдж переміщується вниз під тваринку - не закриває фото */
   .hero-photo-badge {
-    top: 20px;
+    top: auto;
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-180px);
+    transform: translateX(-50%);
   }
 
   .hero-text { max-width: none; }
@@ -1202,6 +1204,11 @@ footer {
 
   .hero-blob-3 {
     display: none;
+  }
+
+  /* М'якші тіні на мобільному - кнопки виглядають єдиним блоком */
+  .button-primary {
+    box-shadow: 0 3px 12px rgba(155, 146, 184, 0.25);
   }
 }
 
@@ -1227,16 +1234,16 @@ footer {
     min-width: 90px;
     padding: 11px 14px;
     font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .hero-photo {
-    max-width: 340px;
+    max-width: 320px;
   }
 
   .hero-photo-badge {
-    top: 14px;
-    transform: translateX(-130px);
-    padding: 8px 12px;
+    bottom: 6px;
+    padding: 7px 13px;
     font-size: 12px;
   }
 
@@ -1324,13 +1331,12 @@ footer {
   .hero-title { font-size: 30px; }
 
   .hero-photo {
-    max-width: 280px;
+    max-width: 260px;
   }
 
   .hero-photo-badge {
-    top: 10px;
-    transform: translateX(-100px);
-    padding: 7px 11px;
+    bottom: 4px;
+    padding: 6px 11px;
     font-size: 11px;
   }
 
