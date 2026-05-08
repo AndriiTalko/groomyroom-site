@@ -194,12 +194,6 @@ body {
   position: relative;
   width: 100%;
   max-width: 560px;
-  animation: hero-photo-float 6s ease-in-out infinite;
-}
-
-@keyframes hero-photo-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 .hero-photo-img {
@@ -1163,7 +1157,6 @@ footer {
     transform: none;
     transition: none;
   }
-  .hero-photo-wrap { animation: none; }
 }
 
 
