@@ -98,10 +98,10 @@ body {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 30px;
   align-items: center;
-  min-height: 540px;
+  min-height: 580px;
 }
 
 .hero-content {
@@ -193,7 +193,6 @@ body {
 .hero-photo-wrap {
   position: relative;
   width: 100%;
-  max-width: 800px;
 }
 
 .hero-photo-img {
