@@ -190,9 +190,7 @@ body {
 
 .hero-photo-wrap {
   position: relative;
-  width: 130%;
-  margin-left: -15%;
-  border: 5px solid red;
+  width: 100%;
 }
 
 .hero-photo-img {
