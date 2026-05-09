@@ -1177,7 +1177,7 @@ footer {
     background-size: cover;
     background-position: center 25%;
     background-repeat: no-repeat;
-    filter: blur(15px) brightness(1.05) saturate(1.1);
+    filter: blur(6px) brightness(1.03);
     z-index: 0;
   }
 
@@ -1188,9 +1188,9 @@ footer {
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(245, 241, 234, 0.55) 0%,
-      rgba(245, 241, 234, 0.78) 35%,
-      rgba(245, 241, 234, 0.92) 70%,
+      rgba(245, 241, 234, 0.35) 0%,
+      rgba(245, 241, 234, 0.55) 40%,
+      rgba(245, 241, 234, 0.85) 75%,
       rgba(245, 241, 234, 1) 100%
     );
     z-index: 1;
