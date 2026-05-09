@@ -700,8 +700,8 @@ section {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  max-width: 900px;
+  gap: 12px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
