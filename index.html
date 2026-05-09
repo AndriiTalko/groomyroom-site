@@ -38,7 +38,7 @@ content="грумінг Житомир, стрижка собак Житомир
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="style.css?v=42">
+<link rel="stylesheet" href="style.css?v=43">
 
 
 <!-- Favicon -->
@@ -570,7 +570,15 @@ Google
 Деякі з&nbsp;наших улюбленців після грумінгу.
 </p>
 
-<div class="gallery-grid" data-animate>
+<div class="gallery-carousel" data-animate>
+
+<button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Попередні фото">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="15 18 9 12 15 6"/>
+</svg>
+</button>
+
+<div class="gallery-track" id="galleryTrack">
 
 <a class="gallery-item" href="img/FOTO/001.webp" data-lightbox><img data-src="img/FOTO/001.webp" alt="Робота груміру GroomyRoom — фото 1" class="gallery-img"></a>
 <a class="gallery-item" href="img/FOTO/002.webp" data-lightbox><img data-src="img/FOTO/002.webp" alt="Робота груміру GroomyRoom — фото 2" class="gallery-img"></a>
@@ -583,6 +591,16 @@ Google
 <a class="gallery-item" href="img/FOTO/009.webp" data-lightbox><img data-src="img/FOTO/009.webp" alt="Робота груміру GroomyRoom — фото 9" class="gallery-img"></a>
 
 </div>
+
+<button class="gallery-nav gallery-next" id="galleryNext" aria-label="Наступні фото">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="9 18 15 12 9 6"/>
+</svg>
+</button>
+
+</div>
+
+<div class="gallery-dots" id="galleryDots"></div>
 
 
 <a class="gallery-link" href="https://www.instagram.com/groomyroom_zt/" target="_blank" rel="noopener">
@@ -869,6 +887,98 @@ title="GroomyRoom на карті Google — Покровська 4, Житом�
       img.src = img.getAttribute('data-src');
       img.classList.add('loaded');
     });
+  }
+
+  // ========== Карусель галереї ==========
+  var galleryTrack = document.getElementById('galleryTrack');
+  var galleryPrev = document.getElementById('galleryPrev');
+  var galleryNext = document.getElementById('galleryNext');
+  var galleryDots = document.getElementById('galleryDots');
+
+  if (galleryTrack && galleryPrev && galleryNext) {
+    var items = galleryTrack.querySelectorAll('.gallery-item');
+
+    function getPerView() {
+      return window.innerWidth <= 768 ? 2 : 3;
+    }
+
+    function getPages() {
+      return Math.ceil(items.length / getPerView());
+    }
+
+    function getCurrentPage() {
+      var perView = getPerView();
+      var itemWidth = items[0].offsetWidth + 16; // ширина + gap
+      return Math.round(galleryTrack.scrollLeft / (itemWidth * perView));
+    }
+
+    function buildDots() {
+      if (!galleryDots) return;
+      galleryDots.innerHTML = '';
+      var pages = getPages();
+      for (var i = 0; i < pages; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'gallery-dot';
+        dot.setAttribute('aria-label', 'Сторінка ' + (i + 1));
+        if (i === 0) dot.classList.add('active');
+        (function(pageIdx) {
+          dot.addEventListener('click', function() {
+            scrollToPage(pageIdx);
+          });
+        })(i);
+        galleryDots.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      var dots = galleryDots ? galleryDots.querySelectorAll('.gallery-dot') : [];
+      var current = getCurrentPage();
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function updateNavButtons() {
+      var current = getCurrentPage();
+      var maxPage = getPages() - 1;
+      galleryPrev.disabled = current === 0;
+      galleryNext.disabled = current >= maxPage;
+    }
+
+    function scrollToPage(pageIdx) {
+      var perView = getPerView();
+      var itemWidth = items[0].offsetWidth + 16;
+      galleryTrack.scrollTo({
+        left: pageIdx * perView * itemWidth,
+        behavior: 'smooth'
+      });
+    }
+
+    galleryPrev.addEventListener('click', function() {
+      scrollToPage(Math.max(0, getCurrentPage() - 1));
+    });
+
+    galleryNext.addEventListener('click', function() {
+      scrollToPage(Math.min(getPages() - 1, getCurrentPage() + 1));
+    });
+
+    var scrollTimeout;
+    galleryTrack.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        updateDots();
+        updateNavButtons();
+      }, 80);
+    }, { passive: true });
+
+    window.addEventListener('resize', function() {
+      buildDots();
+      updateNavButtons();
+    });
+
+    // Ініціалізація
+    buildDots();
+    updateNavButtons();
   }
 
   // ========== Lightbox ==========
