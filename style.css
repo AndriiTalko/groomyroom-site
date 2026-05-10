@@ -1254,35 +1254,37 @@ footer {
 @media (max-width: 900px) {
   .hero {
     position: relative;
-    padding: 50px 24px 50px;
-    min-height: 92vh;
+    padding: 50px 24px 380px;
+    min-height: auto;
     overflow: hidden;
   }
 
-  /* ::before — блюрне фото-фон */
+  /* ::before — чіткіше фото-фон, з акцентом на низ */
   .hero::before {
     content: "";
     position: absolute;
-    inset: -20px;
+    inset: 0;
     background-image: url('img/HERO.webp');
-    background-size: cover;
-    background-position: center 25%;
+    background-size: 130%;
+    background-position: center 95%;
     background-repeat: no-repeat;
-    filter: blur(11px) brightness(1.05);
+    filter: blur(3px) brightness(1.02);
     z-index: 0;
   }
 
-  /* ::after — світлий overlay для читабельності */
+  /* ::after — градієнт зверху для тексту, прозорий внизу */
   .hero::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(245, 241, 234, 0.45) 0%,
-      rgba(245, 241, 234, 0.65) 40%,
-      rgba(245, 241, 234, 0.85) 75%,
-      rgba(245, 241, 234, 1) 100%
+      rgba(245, 241, 234, 1) 0%,
+      rgba(245, 241, 234, 0.96) 25%,
+      rgba(245, 241, 234, 0.85) 45%,
+      rgba(245, 241, 234, 0.5) 60%,
+      rgba(245, 241, 234, 0.2) 80%,
+      rgba(245, 241, 234, 0) 100%
     );
     z-index: 1;
     pointer-events: none;
