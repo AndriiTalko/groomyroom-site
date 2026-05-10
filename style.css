@@ -1269,13 +1269,14 @@ footer {
   .hero-photo {
     display: block;
     position: relative;
-    margin: 30px auto 0;
+    margin: -110px auto 0;
     max-width: 480px;
     width: 100%;
     min-height: auto;
     order: 2;
     inset: auto;
-    z-index: 1;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .hero-photo-wrap {
@@ -1290,11 +1291,17 @@ footer {
     height: auto;
     display: block;
     object-fit: contain;
-    filter: none;
     transform: none;
     /* М'яка лавандова тінь під тваринкою */
     filter: drop-shadow(0 15px 25px rgba(155, 146, 184, 0.25))
             drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06));
+  }
+
+  /* Кнопки лишаються над фото — повертаємо клікабельність */
+  .hero-buttons {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
   }
 
   /* Контейнер - чистий */
