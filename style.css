@@ -1254,48 +1254,50 @@ footer {
 @media (max-width: 900px) {
   .hero {
     position: relative;
-    padding: 50px 24px 380px;
+    padding: 50px 24px 0;
     min-height: auto;
     overflow: hidden;
   }
 
-  /* ::before — чіткіше фото-фон, з акцентом на низ */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('img/HERO.webp');
-    background-size: 130%;
-    background-position: center 95%;
-    background-repeat: no-repeat;
-    filter: blur(3px) brightness(1.02);
-    z-index: 0;
-  }
-
-  /* ::after — градієнт зверху для тексту, прозорий внизу */
+  /* Прибираємо плями і background-image трюки */
+  .hero::before,
   .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(245, 241, 234, 1) 0%,
-      rgba(245, 241, 234, 0.96) 25%,
-      rgba(245, 241, 234, 0.85) 45%,
-      rgba(245, 241, 234, 0.5) 60%,
-      rgba(245, 241, 234, 0.2) 80%,
-      rgba(245, 241, 234, 0) 100%
-    );
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* Приховуємо HTML-картинку — використовуємо CSS-фон */
-  .hero-photo {
     display: none;
   }
 
-  /* Контейнер з текстом - над фоном і overlay */
+  /* Показуємо HTML-картинку як звичайний контент під кнопками */
+  .hero-photo {
+    display: block;
+    position: relative;
+    margin: 30px auto 0;
+    max-width: 480px;
+    width: 100%;
+    min-height: auto;
+    order: 2;
+    inset: auto;
+    z-index: 1;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    inset: auto;
+  }
+
+  .hero-photo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: none;
+    transform: none;
+    /* М'яка лавандова тінь під тваринкою */
+    filter: drop-shadow(0 15px 25px rgba(155, 146, 184, 0.25))
+            drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06));
+  }
+
+  /* Контейнер - чистий */
   .hero .container {
     position: relative;
     z-index: 2;
@@ -1315,6 +1317,7 @@ footer {
   .hero-content {
     align-items: center;
     width: 100%;
+    order: 1;
   }
 
   .hero-text {
@@ -1330,7 +1333,6 @@ footer {
     display: none;
   }
 
-  /* Прибираю плями - фото вже є фоном */
   .hero-blob-1, .hero-blob-2 {
     display: none;
   }
