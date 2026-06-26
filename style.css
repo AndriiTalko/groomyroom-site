@@ -726,8 +726,20 @@ section {
   scroll-snap-align: start;
 }
 
+.reviews-item .review-meta {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .reviews-dots {
   margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .reviews-item {
+    flex: 0 0 100%;
+  }
 }
 
 /* ============================================
@@ -1296,6 +1308,11 @@ footer {
    MOBILE — РЕСПОНСИВ
    ============================================ */
 @media (max-width: 900px) {
+  /* Відгуки: 2 картки в ряд */
+  .reviews-item {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+
   .hero {
     position: relative;
     padding: 50px 24px 0;
@@ -1465,14 +1482,6 @@ footer {
   }
 
   .reviews-carousel { gap: 8px; }
-
-  .reviews-item {
-    flex: 0 0 100%;
-  }
-
-  .reviews-track {
-    gap: 16px;
-  }
 
   .gallery-carousel { gap: 8px; }
 
