@@ -687,6 +687,49 @@ section {
 
 
 /* ============================================
+   ВІДГУКИ — КАРУСЕЛЬ
+   ============================================ */
+.reviews-carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.reviews-carousel .gallery-nav {
+  align-self: center;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 8px 4px 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  align-items: stretch;
+}
+
+.reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-item {
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+}
+
+.reviews-dots {
+  margin-top: 14px;
+}
+
+/* ============================================
    ГАЛЕРЕЯ — КАРУСЕЛЬ
    ============================================ */
 .gallery-subtitle {
@@ -1418,6 +1461,16 @@ footer {
   .reviews-actions {
     flex-direction: column;
     gap: 18px;
+  }
+
+  .reviews-carousel { gap: 8px; }
+
+  .reviews-item {
+    flex: 0 0 100%;
+  }
+
+  .reviews-track {
+    gap: 16px;
   }
 
   .gallery-carousel { gap: 8px; }
