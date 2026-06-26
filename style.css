@@ -722,6 +722,7 @@ section {
 
 .reviews-item {
   flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
   scroll-snap-align: start;
 }
 
