@@ -736,7 +736,15 @@ section {
   margin-top: 14px;
 }
 
-@media (max-width: 640px) {
+/* Відгуки: 2 картки (планшет / вузьке вікно) */
+@media (max-width: 1199px) {
+  .reviews-item {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+/* Відгуки: 1 картка (телефон) */
+@media (max-width: 850px) {
   .reviews-item {
     flex: 0 0 100%;
   }
@@ -1308,11 +1316,6 @@ footer {
    MOBILE — РЕСПОНСИВ
    ============================================ */
 @media (max-width: 900px) {
-  /* Відгуки: 2 картки в ряд */
-  .reviews-item {
-    flex: 0 0 calc((100% - 24px) / 2);
-  }
-
   .hero {
     position: relative;
     padding: 50px 24px 0;
