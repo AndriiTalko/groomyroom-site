@@ -642,6 +642,17 @@ section {
   line-height: 1.65;
   position: relative;
   z-index: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+
+/* Футер картки з бейджем Google — приклеєний донизу */
+.review-footer {
+  margin-top: auto;
+  padding-top: 2px;
 }
 
 .reviews-actions {
@@ -693,13 +704,15 @@ section {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
 }
 
-.reviews-carousel .gallery-nav {
-  align-self: center;
+/* Нижній ряд керування: стрілка — крапки — стрілка */
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
 }
 
 .reviews-track {
@@ -711,7 +724,7 @@ section {
   padding: 8px 4px 14px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  flex: 1;
+  width: 100%;
   -webkit-overflow-scrolling: touch;
   align-items: stretch;
 }
@@ -733,7 +746,7 @@ section {
 }
 
 .reviews-dots {
-  margin-top: 14px;
+  margin-top: 0;
 }
 
 /* Відгуки: 2 картки (планшет / вузьке вікно) */
@@ -1484,7 +1497,6 @@ footer {
     gap: 18px;
   }
 
-  .reviews-carousel { gap: 8px; }
 
   .gallery-carousel { gap: 8px; }
 
